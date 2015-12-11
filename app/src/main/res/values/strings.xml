@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">AM-FM Modulator</string>
+    <string name="dataSignalText">MODULATING SIGNAL</string>
+    <string name="carrierSignalText">CARRIER SIGNAL</string>
+    <string name="modulatedSignalText">MODULATED SIGNAL</string>
+    <string name="dataSignalFText">AM FM Modulator</string>
+    <string name="carrierSignalFText">AM FM Modulator</string>
+    <string name="drawButton">PLOT GRAPH</string>
+    <string name="resetButton">CLEAR</string>
+    <string name="showDataWave">DATA WAVE</string>
+    <string name="showCWave">CARRIER WAVE</string>
+    <string name="showMWave">MODULATED WAVE</string>
+    <string name="showMixWave">MULTI WAVES</string>
+    <string name="showWaveTypeAM">AMPLITUDE MODULATION</string>
+    <string name="showWaveTypePM">PHASE MODULATION</string>
+    <string name="showWaveTypeFM">FREQUENCY MODULATION</string>
+
+    <array name="drawingMode">
+        <item>Amplitude-modulated Wave</item>
+        <item>Phase-modulated Wave</item>
+        <item>Frequency-modulated Wave</item>
+    </array>
+</resources>
