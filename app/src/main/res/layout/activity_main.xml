@@ -61,7 +61,7 @@
                     android:gravity="center"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="20sp"
-                    android:text="1" />
+                    android:text="0.25" />
                 <TextView
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
@@ -174,7 +174,7 @@
                     android:gravity="center"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="20sp"
-                    android:text="2" />
+                    android:text="1" />
                 <TextView
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
@@ -196,7 +196,7 @@
                     android:hint="f"
                     android:gravity="center"
                     android:textSize="20sp"
-                    android:text="15" />
+                    android:text="10" />
                 <TextView
                     android:layout_width="5dp"
                     android:layout_height="wrap_content"

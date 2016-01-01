@@ -3,6 +3,7 @@
     <string name="dataSignalText">MODULATING SIGNAL</string>
     <string name="carrierSignalText">CARRIER SIGNAL</string>
     <string name="modulatedSignalText">MODULATED SIGNAL</string>
+    <string name="mixSignalText">MULTIPLE SIGNALS</string>
     <string name="dataSignalFText">AM FM Modulator</string>
     <string name="carrierSignalFText">AM FM Modulator</string>
     <string name="drawButton">PLOT GRAPH</string>
@@ -20,4 +21,7 @@
         <item>Phase-modulated Wave</item>
         <item>Frequency-modulated Wave</item>
     </array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

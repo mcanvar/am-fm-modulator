@@ -1,11 +1,32 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorSecondary</item>
+        <item name="android:textColorSecondary">@color/colorSecondary</item>
+        <item name="colorAccent">@color/colorBackground</item>
     </style>
 
+    <style name="CUSTOM_ALERT_STYLE">
+        <item name="android:bottomBright">@android:color/transparent</item>
+        <item name="android:bottomDark">@android:color/transparent</item>
+        <item name="android:bottomMedium">@android:color/transparent</item>
+        <item name="android:centerBright">@android:color/transparent</item>
+        <item name="android:centerDark">@android:color/transparent</item>
+        <item name="android:centerMedium">@android:color/transparent</item>
+        <item name="android:fullBright">@android:color/transparent</item>
+        <item name="android:fullDark">@android:color/transparent</item>
+        <item name="android:topBright">@android:color/transparent</item>
+        <item name="android:topDark">@android:color/transparent</item>
+    </style>
+    <style name="CUSTOM_PROGRESS_DIALOG">
+        <item name="android:alertDialogStyle">@style/CUSTOM_ALERT_STYLE</item>
+        <item name="android:textColorPrimary">@color/colorSecondaryLight</item>
+        <item name="android:windowBackground">@color/colorSecondaryLightT</item>
+        <item name="android:textColor">@color/colorSecondaryLight</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:layout_marginTop">3dip</item>
+    </style>
 </resources>
