@@ -1,3 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        is-multidex="false"
+        jar="C:\Users\mevlu\.gradle\caches\modules-2\files-2.1\org.jsoup\jsoup\1.8.1\1eb6690b0c629d7000c77a72df5e822fb974f521\jsoup-1.8.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1eb6690b0c629d7000c77a72df5e822fb974f521">
+        <dex dex="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\pre-dexed\release\jsoup-1.8.1_183dbddb8f33bb2f749c058dc95074ecee0b8d49.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\exploded-aar\com.jjoe64\graphview\4.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="37bf8de5b4f9e7e93006db783b9b3168e32e38e9">
+        <dex dex="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\pre-dexed\release\com.jjoe64-graphview-4.0.1_41e4c2d5ad85ff895b560164c831b20b0d766533.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\pre-dexed\release\com.android.support-appcompat-v7-23.1.1_999ac08e26c2163f3b3043b9d54414c8f73370b2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\pre-dexed\release\com.android.support-design-23.1.1_aa2ba842c482d354a210d3feeb926b10b75e09b9.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mevlu\.gradle\caches\modules-2\files-2.1\org.jsoup\jsoup\1.8.1\1eb6690b0c629d7000c77a72df5e822fb974f521\jsoup-1.8.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1eb6690b0c629d7000c77a72df5e822fb974f521">
+        <dex dex="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\transforms\dex\debug\folders\1000\10\jsoup-1.8.1_183dbddb8f33bb2f749c058dc95074ecee0b8d49\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\exploded-aar\com.github.danielemaddaluno.androidupdatechecker\library\1.0.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6c26c26ec2bec31679c8776788a4d96613fa6558">
+        <dex dex="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\pre-dexed\release\com.github.danielemaddaluno.androidupdatechecker-library-1.0.2_77c3e78e40556909d33304a6b9681a7384e53da7.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.1.1_999ac08e26c2163f3b3043b9d54414c8f73370b2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.1.1_685d1d49a8fcf306cca9706e5203d439d9dee7f2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\exploded-aar\com.github.danielemaddaluno.androidupdatechecker\library\1.0.2\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6c26c26ec2bec31679c8776788a4d96613fa6558">
+        <dex dex="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.github.danielemaddaluno.androidupdatechecker-library-1.0.2_77c3e78e40556909d33304a6b9681a7384e53da7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="84b813ce5632658a7c4e63147d1cd18b43552b91">
+        <dex dex="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_709be5ca6fcfbd812e1cb26c4f0f342fb12fd03d\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mevlu\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\pre-dexed\release\support-annotations-23.1.1_3da3ef80e35f31e4708a3aa4f94e40d32de243aa.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\exploded-aar\com.jjoe64\graphview\4.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="37bf8de5b4f9e7e93006db783b9b3168e32e38e9">
+        <dex dex="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.jjoe64-graphview-4.0.1_41e4c2d5ad85ff895b560164c831b20b0d766533\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mevlu\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.1.1_3da3ef80e35f31e4708a3aa4f94e40d32de243aa\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\pre-dexed\release\internal_impl-23.1.1_14757b09aaf7e4f12ae7d4091148d265e7a47a7b.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.1.1_14757b09aaf7e4f12ae7d4091148d265e7a47a7b\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\pre-dexed\release\com.android.support-recyclerview-v7-23.1.1_685d1d49a8fcf306cca9706e5203d439d9dee7f2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\pre-dexed\release\com.android.support-support-v4-23.1.1_5f365941c82e5897439486871bef96dfd55a1a2d.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="baa43c010f5dd9306f39759698ab2507fc082f88">
+        <dex dex="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_7cfb46d00419210fdba6247526b9b6ff5a8276fc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.1.1_aa2ba842c482d354a210d3feeb926b10b75e09b9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\mevlu\Documents\AndroidStudioProjects\AM-FM-Modulator\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.1.1_5f365941c82e5897439486871bef96dfd55a1a2d\classes.dex" />
+    </item>
+
+</items>

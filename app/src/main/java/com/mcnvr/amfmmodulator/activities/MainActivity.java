@@ -1,6 +1,7 @@
 package com.mcnvr.amfmmodulator.activities;
 
 import android.content.SharedPreferences;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -13,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.madx.updatechecker.lib.UpdateRunnable;
 import com.mcnvr.amfmmodulator.R;
 import com.mcnvr.amfmmodulator.helpers.PointFactoryTask;
 
@@ -41,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        new UpdateRunnable(this, new Handler()).start();
 
         //Hide keyboard at the beginning
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);

@@ -158,11 +158,7 @@ public class PointFactoryTask extends AsyncTask<String, Integer, String> {
                 if(isCancelled()) break;
 
                 int progress = i * 100 / arraySize;
-                try {
-                    Thread.sleep(2,0);
-                } catch(InterruptedException ex) {
-                    Thread.currentThread().interrupt();
-                }
+
                 publishProgress(progress);
             }
             dataPointTemp[arraySize - 1] = new DataPoint(startPoint, ((amp + carrier[arraySize - 1].getY()) * (Math.sin(2 * Math.PI * freq * startPoint + pha))));
