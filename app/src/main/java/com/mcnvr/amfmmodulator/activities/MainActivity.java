@@ -14,6 +14,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.madx.updatechecker.lib.UpdateRunnable;
 import com.mcnvr.amfmmodulator.R;
 import com.mcnvr.amfmmodulator.helpers.PointFactoryTask;
@@ -31,13 +36,8 @@ public class MainActivity extends AppCompatActivity {
     EditText editTextCPhase;
     Spinner spinnerWaveType;
     Button buttonPlot;
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        finish();
-    }
+    InterstitialAd mInterstitialAd;
+    private AdView mAdView;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -45,6 +45,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         new UpdateRunnable(this, new Handler()).start();
+
+
+        MobileAds.initialize(this, "ca-app-pub-2926708254200421~2569596021");
+        mAdView = (AdView) findViewById(R.id.ad_view);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+        mAdView.loadAd(adRequest);
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-2926708254200421/6999795622");
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                requestNewInterstitial();
+                startPlotting();
+            }
+        });
+
+        requestNewInterstitial();
 
         //Hide keyboard at the beginning
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
@@ -96,29 +117,36 @@ public class MainActivity extends AppCompatActivity {
         buttonPlot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if(editTextTime.getText().toString().matches("") ||
-                        editTextAmplitude.getText().toString().matches("") ||
-                        editTextFrequency.getText().toString().matches("") ||
-                        editTextPhase.getText().toString().matches("") ||
-                        textViewCTime.getText().toString().matches("") ||
-                        editTextCAmplitude.getText().toString().matches("") ||
-                        editTextCFrequency.getText().toString().matches("") ||
-                        editTextCPhase.getText().toString().matches(""))
-                Toast.makeText(getApplicationContext(),"Empty Value(s)!",Toast.LENGTH_LONG).show();
-                else {
-                    Integer selection = spinnerWaveType.getSelectedItemPosition();
-                    PointFactoryTask pointFactoryTask = new PointFactoryTask(MainActivity.this, buttonPlot);
-
-                    pointFactoryTask.execute(editTextTime.getText().toString(), editTextAmplitude.getText().toString(),
-                            editTextFrequency.getText().toString(), editTextPhase.getText().toString(),
-                            textViewCTime.getText().toString(), editTextCAmplitude.getText().toString(),
-                            editTextCFrequency.getText().toString(), editTextCPhase.getText().toString(),
-                            selection.toString());
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    startPlotting();
                 }
             }
         });
 
+    }
+
+    private void startPlotting() {
+        if(editTextTime.getText().toString().matches("") ||
+                editTextAmplitude.getText().toString().matches("") ||
+                editTextFrequency.getText().toString().matches("") ||
+                editTextPhase.getText().toString().matches("") ||
+                textViewCTime.getText().toString().matches("") ||
+                editTextCAmplitude.getText().toString().matches("") ||
+                editTextCFrequency.getText().toString().matches("") ||
+                editTextCPhase.getText().toString().matches(""))
+            Toast.makeText(getApplicationContext(),"Empty Value(s)!",Toast.LENGTH_LONG).show();
+        else {
+            Integer selection = spinnerWaveType.getSelectedItemPosition();
+            PointFactoryTask pointFactoryTask = new PointFactoryTask(MainActivity.this, buttonPlot);
+
+            pointFactoryTask.execute(editTextTime.getText().toString(), editTextAmplitude.getText().toString(),
+                    editTextFrequency.getText().toString(), editTextPhase.getText().toString(),
+                    textViewCTime.getText().toString(), editTextCAmplitude.getText().toString(),
+                    editTextCFrequency.getText().toString(), editTextCPhase.getText().toString(),
+                    selection.toString());
+        }
     }
 
     //clear form
@@ -155,5 +183,40 @@ public class MainActivity extends AppCompatActivity {
         outState.putString("textViewCTime", textViewCTime.getText().toString());
         outState.putString("editTextCPhase", editTextCPhase.getText().toString());
         outState.commit();
+    }
+
+    private void requestNewInterstitial() {
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+
+        mInterstitialAd.loadAd(adRequest);
+    }
+
+    /** Called when leaving the activity */
+    @Override
+    public void onPause() {
+        if (mAdView != null) {
+            mAdView.pause();
+        }
+        super.onPause();
+    }
+
+    /** Called when returning to the activity */
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mAdView != null) {
+            mAdView.resume();
+        }
+    }
+
+    /** Called before the activity is destroyed */
+    @Override
+    public void onDestroy() {
+        if (mAdView != null) {
+            mAdView.destroy();
+        }
+        super.onDestroy();
     }
 }
