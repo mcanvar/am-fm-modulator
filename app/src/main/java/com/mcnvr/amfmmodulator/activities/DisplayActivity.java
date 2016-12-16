@@ -46,14 +46,6 @@ public class DisplayActivity extends AppCompatActivity {
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-2926708254200421/3987453628");
 
-        mInterstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdClosed() {
-                requestNewInterstitial();
-                backPressing();
-            }
-        });
-
         requestNewInterstitial();
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
@@ -71,7 +63,11 @@ public class DisplayActivity extends AppCompatActivity {
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    viewPager.setCurrentItem(tab.getPosition());
+                }
             }
 
             @Override
@@ -93,15 +89,6 @@ public class DisplayActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
-        if (mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
-        } else {
-            backPressing();
-        }
-    }
-
-    private void backPressing() {
         super.onBackPressed();
 
         Intent intentMain = new Intent(this, MainActivity.class);
@@ -109,14 +96,19 @@ public class DisplayActivity extends AppCompatActivity {
             Bundle bundle = ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.activity_animation, R.anim.activity_animation2).toBundle();
             startActivity(intentMain, bundle);
         }
-        finish();
     }
 
     public DoubleParcelable getParcelable() {
         return parcelable;
     }
-    public DoubleParcelable getParcelableCarrier() { return parcelableCarrier; }
-    public DoubleParcelable getParcelableModulated() { return parcelableModulated; }
+
+    public DoubleParcelable getParcelableCarrier() {
+        return parcelableCarrier;
+    }
+
+    public DoubleParcelable getParcelableModulated() {
+        return parcelableModulated;
+    }
 
     public void initializeGraph(final GraphView graph, final DoubleParcelable parcelable) {
 
@@ -125,16 +117,16 @@ public class DisplayActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                    graph.removeAllSeries();
+                        graph.removeAllSeries();
 
-                    LineGraphSeries<DataPoint> series = new LineGraphSeries<>(parcelable.getDataPoints());
+                        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(parcelable.getDataPoints());
 
-                    series.setThickness(4);
-                    series.setColor(Color.parseColor("#3E828F"));
-                    graph.addSeries(series);
+                        series.setThickness(4);
+                        series.setColor(Color.parseColor("#3E828F"));
+                        graph.addSeries(series);
 
-                    graph.getViewport().setScalable(true);
-                    graph.getViewport().setScrollable(true);
+                        graph.getViewport().setScalable(true);
+                        graph.getViewport().setScrollable(true);
                     }
                 });
             }
@@ -142,28 +134,28 @@ public class DisplayActivity extends AppCompatActivity {
     }
 
     //Override for mixed type
-    public void initializeGraph(final GraphView graph, final DoubleParcelable parcelable,  final DoubleParcelable parcelable2) {
+    public void initializeGraph(final GraphView graph, final DoubleParcelable parcelable, final DoubleParcelable parcelable2) {
 
         new Thread(new Runnable() {
             public void run() {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                    graph.removeAllSeries();
+                        graph.removeAllSeries();
 
-                    LineGraphSeries<DataPoint> series = new LineGraphSeries<>(parcelable.getDataPoints());
-                    LineGraphSeries<DataPoint> series2 = new LineGraphSeries<>(parcelable2.getDataPoints());
+                        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(parcelable.getDataPoints());
+                        LineGraphSeries<DataPoint> series2 = new LineGraphSeries<>(parcelable2.getDataPoints());
 
-                    series.setThickness(4);
-                    series.setColor(Color.parseColor("#3E828F"));
-                    series2.setThickness(2);
-                    series2.setColor(Color.parseColor("#091928"));
-                    graph.addSeries(series);
-                    graph.addSeries(series2);
+                        series.setThickness(4);
+                        series.setColor(Color.parseColor("#3E828F"));
+                        series2.setThickness(2);
+                        series2.setColor(Color.parseColor("#091928"));
+                        graph.addSeries(series);
+                        graph.addSeries(series2);
 
 
-                    graph.getViewport().setScalable(true);
-                    graph.getViewport().setScrollable(true);
+                        graph.getViewport().setScalable(true);
+                        graph.getViewport().setScrollable(true);
                     }
                 });
             }
@@ -178,7 +170,9 @@ public class DisplayActivity extends AppCompatActivity {
         mInterstitialAd.loadAd(adRequest);
     }
 
-    /** Called when leaving the activity */
+    /**
+     * Called when leaving the activity
+     */
     @Override
     public void onPause() {
         if (mAdView != null) {
@@ -187,7 +181,9 @@ public class DisplayActivity extends AppCompatActivity {
         super.onPause();
     }
 
-    /** Called when returning to the activity */
+    /**
+     * Called when returning to the activity
+     */
     @Override
     public void onResume() {
         super.onResume();
@@ -196,7 +192,9 @@ public class DisplayActivity extends AppCompatActivity {
         }
     }
 
-    /** Called before the activity is destroyed */
+    /**
+     * Called before the activity is destroyed
+     */
     @Override
     public void onDestroy() {
         if (mAdView != null) {
