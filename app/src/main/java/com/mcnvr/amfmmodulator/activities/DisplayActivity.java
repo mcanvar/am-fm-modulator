@@ -4,9 +4,13 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -29,7 +33,9 @@ public class DisplayActivity extends AppCompatActivity {
     DoubleParcelable parcelableModulated;
     PagerAdapter adapter;
     InterstitialAd mInterstitialAd;
-    private AdView mAdView;
+    AdView mAdView;
+    Integer selected;
+    ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,14 +54,14 @@ public class DisplayActivity extends AppCompatActivity {
 
         requestNewInterstitial();
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        final TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("DATA"));
         tabLayout.addTab(tabLayout.newTab().setText("CARR"));
         tabLayout.addTab(tabLayout.newTab().setText("MOD"));
         tabLayout.addTab(tabLayout.newTab().setText("MUL"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+        viewPager = (ViewPager) findViewById(R.id.pager);
         adapter = new PagerAdapter
                 (getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
@@ -67,6 +73,7 @@ public class DisplayActivity extends AppCompatActivity {
                     mInterstitialAd.show();
                 } else {
                     viewPager.setCurrentItem(tab.getPosition());
+                    selected = tab.getPosition();
                 }
             }
 
@@ -85,6 +92,25 @@ public class DisplayActivity extends AppCompatActivity {
         parcelableCarrier = getIntent().getExtras().getParcelable("datac");
         parcelableModulated = getIntent().getExtras().getParcelable("datam");
         selection = new Integer(getIntent().getExtras().getInt("selection"));
+
+
+        FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Snackbar snackbar = Snackbar.make(view, getSignalData(viewPager.getCurrentItem()), Snackbar.LENGTH_INDEFINITE);
+                snackbar.setAction("GOT IT", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                snackbar.dismiss();
+                            }
+                        });
+                View snackbarView = snackbar.getView();
+                TextView textView = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
+                textView.setMaxLines(5);
+                snackbar.setActionTextColor(Color.RED).show();
+            }
+        });
     }
 
     @Override
@@ -168,6 +194,17 @@ public class DisplayActivity extends AppCompatActivity {
                 .build();
 
         mInterstitialAd.loadAd(adRequest);
+    }
+
+    private String getSignalData(int page) {
+        String signaldata[] = {
+                "The signal that based on the first formula. This signal transmits information and should be almost same form after transmission complated.",
+                "The signal that based on the second formula. This signal carries the actual signal.",
+                "This signal is an addition of data signal and carrier signal. This signal will transmit.",
+                "This graph shows us two signals to see the differences."
+        };
+
+        return signaldata[page];
     }
 
     /**
