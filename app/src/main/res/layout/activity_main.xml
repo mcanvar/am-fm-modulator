@@ -42,7 +42,7 @@
                 android:id="@+id/textView"
                 android:layout_gravity="center_horizontal"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="40sp"
+                android:textSize="30sp"
                 android:textAlignment="center" />
             <LinearLayout
                 android:layout_width="match_parent"
@@ -155,7 +155,7 @@
                 android:id="@+id/textView6"
                 android:layout_gravity="center_horizontal"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="40sp"
+                android:textSize="30sp"
                 android:textAlignment="center" />
             <LinearLayout
                 android:layout_width="match_parent"
@@ -308,6 +308,15 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:id="@+id/buttonPlot" />
             </LinearLayout>
+
+            <Button
+                android:id="@+id/buttonInfo"
+                style="@android:style/Widget.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GENERAL INFO"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp" />
         </LinearLayout>
     </ScrollView>
 
