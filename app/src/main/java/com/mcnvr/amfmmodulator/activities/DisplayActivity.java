@@ -36,11 +36,13 @@ public class DisplayActivity extends AppCompatActivity {
     AdView mAdView;
     Integer selected;
     ViewPager viewPager;
+    Boolean shouldShowAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
+        shouldShowAd = true;
 
         MobileAds.initialize(this, "ca-app-pub-2926708254200421~2569596021");
         mAdView = (AdView) findViewById(R.id.ad_view);
@@ -51,8 +53,6 @@ public class DisplayActivity extends AppCompatActivity {
 
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-2926708254200421/3987453628");
-
-        requestNewInterstitial();
 
         final TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("DATA"));
@@ -72,6 +72,11 @@ public class DisplayActivity extends AppCompatActivity {
                 if (mInterstitialAd.isLoaded()) {
                     mInterstitialAd.show();
                 } else {
+                    if (shouldShowAd)
+                    {
+                        requestNewInterstitial();
+                        shouldShowAd = false;
+                    }
                     viewPager.setCurrentItem(tab.getPosition());
                     selected = tab.getPosition();
                 }

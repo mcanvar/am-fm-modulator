@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
                 View snackbarView = snackbar.getView();
                 TextView textView = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
                 textView.setMaxLines(50);
-                snackbar.setActionTextColor(Color.RED).show();
+                snackbar.setActionTextColor(Color.YELLOW).show();
             }
         });
 
