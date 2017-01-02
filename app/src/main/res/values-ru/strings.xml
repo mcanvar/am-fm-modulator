@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AM-FM модулятор</string>
+    <string name="app_name">AM-FM Modulator</string>
     <string name="dataSignalText">модулирующий сигнал</string>
     <string name="carrierSignalText">несущий сигнал</string>
     <string name="modulatedSignalText">МОДУЛИРОВАННЫЙ СИГНАЛ</string>
