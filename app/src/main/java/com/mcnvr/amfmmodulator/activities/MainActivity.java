@@ -2,7 +2,6 @@ package com.mcnvr.amfmmodulator.activities;
 
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,9 +20,9 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
-import com.madx.updatechecker.lib.UpdateRunnable;
 import com.mcnvr.amfmmodulator.R;
 import com.mcnvr.amfmmodulator.helpers.PointFactoryTask;
+import com.rampo.updatechecker.UpdateChecker;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -47,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new UpdateRunnable(this, new Handler()).start();
+        UpdateChecker checker = new UpdateChecker(this); // If you are in a Activity or a FragmentActivity
+        checker.start();
 
 
         MobileAds.initialize(this, "ca-app-pub-2926708254200421~2569596021");
