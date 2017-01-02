@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">AM-FM Modülasyonu</string>
+    <string name="dataSignalText">VERİ SİNYALİ</string>
+    <string name="carrierSignalText">TAŞIYICI SİNYAL</string>
+    <string name="modulatedSignalText">MODÜLER SİNYAL</string>
+    <string name="mixSignalText">İKİLİ GÖSTERİM</string>
+    <string name="dataSignalFText">AM FM Modülasyonu</string>
+    <string name="carrierSignalFText">AM FM Modülasyonu</string>
+    <string name="drawButton">GRAFİĞİ ÇİZ</string>
+    <string name="infoButton">GENEL BİLGİLER</string>
+    <string name="resetButton">TEMİZLE</string>
+    <string name="gotItText">ANLADIM</string>
+    <string name="mainInfoText">
+        Genlik modülasyonu (AM), elektronik iletişimde kullanılan bir modülasyon tekniğidir ve çoğunlukla bir radyo taşıyıcı dalga yoluyla bilgi iletmek için kullanılır. Genlik modülasyonunda, taşıyıcı dalganın genlik (sinyal gücü) iletilen dalga biçimi ile orantılı olarak değişir.\n
+        \n
+        c(t) = A . sin( 2.π.fc.t)\n
+        m(t) = M . cos( 2.π.fm.t + φ)\n
+        y(t) = [1 + m(t)] . c(t)\n
+        \n
+        Açı modülasyonu bir analog modülasyon sınıfıdır. Bu teknikler, veriyi iletmek için bir taşıyıcı sinyalin açısını (veya fazını) değiştirmeye dayanmaktadır. Amplitüd modülasyon iletiminde olduğu gibi, taşıyıcının genliğini değiştirmenin aksine.\n
+        \n
+        s(t) = A . cos( 2.π.fc.t + φ(t) )\n
+        PM: φ(t) = np . m(t), burada np, faz modülasyon indeksi olarak adlandırılan parametredir.\n
+        FM: φ’(t) = nf . m(t), burada nf frekans modülasyon indeksi ve φ’(t).
+    </string>
+    <string name="dataInfoText">İlk formüle dayanan sinyal. Bu sinyal, bilgi iletir ve iletim tamamlandıktan sonra neredeyse aynı formda olmalıdır.</string>
+    <string name="dataCarrText">İkinci formüle dayanan sinyal. Bu sinyal gerçek sinyali taşır.</string>
+    <string name="dataModText">Bu sinyal, veri sinyali ve taşıyıcı sinyalin birbirine eklenmesidir. Bu sinyal iletilir.</string>
+    <string name="dataMulText">Bu grafik bize farkları gözlemlemek için iki sinyal gösteriyor.</string>
+    <string name="dataTabTextAbb">VERİ</string>
+    <string name="carrTabTextAbb">TAŞIYICI</string>
+    <string name="modTabTextAbb">MODÜLE</string>
+    <string name="mulTabTextAbb">İKİLİ</string>
+
+    <array name="drawingMode">
+        <item>Genlik Modülasyonu</item>
+        <item>Faz Modülasyonu</item>
+        <item>Frekans Modülasyonu</item>
+    </array>
+</resources>
