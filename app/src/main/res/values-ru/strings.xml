@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">AM-FM модулятор</string>
+    <string name="dataSignalText">модулирующий сигнал</string>
+    <string name="carrierSignalText">несущий сигнал</string>
+    <string name="modulatedSignalText">МОДУЛИРОВАННЫЙ СИГНАЛ</string>
+    <string name="mixSignalText">МНОЖЕСТВЕННЫЕ СИГНАЛЫ</string>
+    <string name="dataSignalFText">Am и FM модулятор</string>
+    <string name="carrierSignalFText">Am и FM модулятор</string>
+    <string name="drawButton">ГРАФИК</string>
+    <string name="infoButton">ОБЩАЯ ИНФОРМАЦИЯ</string>
+    <string name="resetButton">очистить форму</string>
+    <string name="gotItText">ПОЛУЧИЛ ЕГО</string>
+    <string name="mainInfoText">
+        Амплитудная модуляция (АМ) - это метод модуляции, используемый в электронные сообщения, наиболее часто для передачи информации через радио волны. В амплитудной модуляции, амплитуда (сила) сигнала несущей волны изменяется пропорционально сигнал передается.\n
+        \n
+        c(t) = A . sin( 2.π.fc.t)\n
+        m(t) = M . cos( 2.π.fm.t + φ)\n
+        y(t) = [1 + m(t)] . c(t)\n
+        \n
+        Угловой модуляции-это класс аналоговой модуляции. Эти методы основаны на изменении угла (или фазы) сигнала несущей для передачи данных. Это в отличие от разной амплитуды несущей, например, в передачи амплитудной модуляции.\n
+        \n
+        s(t) = A . cos( 2.π.fc.t + φ(t) )\n
+        PM: φ(t) = np . m(t), где NP-это параметр называется индексом фазовой модуляции.\n
+        FM: φ’(t) = nf . m(t), где НФ является индекс частотной модуляции и φ’(t).
+    </string>
+    <string name="dataInfoText">Сигнал, основанный на первой формуле. Этот сигнал передает информацию и должна быть почти одинаковой форме после завершения передачи.</string>
+    <string name="dataCarrText">Сигнал о том, что на основе второй формулы. Этот сигнал несет фактический сигнал.</string>
+    <string name="dataModText">Этот сигнал является дополнением данных сигнала и сигнала несущей. Этот сигнал передаст.</string>
+    <string name="dataMulText">Этот график показывает нам два сигнала, чтобы увидеть различия.</string>
+    <string name="dataTabTextAbb">Данные</string>
+    <string name="carrTabTextAbb">Перевозчик</string>
+    <string name="modTabTextAbb">МОД</string>
+    <string name="mulTabTextAbb">Несколько</string>
+    <array name="drawingMode">
+        <item>Амплитудно-модулированная волна</item>
+        <item>Фазово-модулированные волны</item>
+        <item>Частотно-модулированная волна</item>
+    </array>
+</resources>
