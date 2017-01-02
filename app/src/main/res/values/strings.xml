@@ -7,21 +7,33 @@
     <string name="dataSignalFText">AM FM Modulator</string>
     <string name="carrierSignalFText">AM FM Modulator</string>
     <string name="drawButton">PLOT GRAPH</string>
+    <string name="infoButton">GENERAL INFO</string>
     <string name="resetButton">CLEAR</string>
-    <string name="showDataWave">DATA WAVE</string>
-    <string name="showCWave">CARRIER WAVE</string>
-    <string name="showMWave">MODULATED WAVE</string>
-    <string name="showMixWave">MULTI WAVES</string>
-    <string name="showWaveTypeAM">AMPLITUDE MODULATION</string>
-    <string name="showWaveTypePM">PHASE MODULATION</string>
-    <string name="showWaveTypeFM">FREQUENCY MODULATION</string>
-
+    <string name="gotItText">GOT IT</string>
+    <string name="mainInfoText">
+        Amplitude modulation (AM) is a modulation technique used in electronic communication, most commonly for transmitting information via a radio carrier wave. In amplitude modulation, the amplitude (signal strength) of the carrier wave is varied in proportion to the waveform being transmitted.\n
+        \n
+        c(t) = A . sin( 2.π.fc.t)\n
+        m(t) = M . cos( 2.π.fm.t + φ)\n
+        y(t) = [1 + m(t)] . c(t)\n
+        \n
+        Angle modulation is a class of analog modulation. These techniques are based on altering the angle (or phase) of a carrier signal to transmit data. This as opposed to varying the amplitude of the carrier, such as in amplitude modulation transmission.\n
+        \n
+        s(t) = A . cos( 2.π.fc.t + φ(t) )\n
+        PM: φ(t) = np . m(t), where np is parameter called phase modulation index.\n
+        FM: φ’(t) = nf . m(t), where nf is the frequency modulation index and φ’(t).
+    </string>
+    <string name="dataInfoText">The signal that based on the first formula. This signal transmits information and should be almost same form after transmission completed.</string>
+    <string name="dataCarrText">The signal that based on the second formula. This signal carries the actual signal.</string>
+    <string name="dataModText">This signal is an addition of data signal and carrier signal. This signal will transmit.</string>
+    <string name="dataMulText">This graph shows us two signals to see the differences.</string>
+    <string name="dataTabTextAbb">DATA</string>
+    <string name="carrTabTextAbb">CARR</string>
+    <string name="modTabTextAbb">MOD</string>
+    <string name="mulTabTextAbb">MUL</string>
     <array name="drawingMode">
         <item>Amplitude-modulated Wave</item>
         <item>Phase-modulated Wave</item>
         <item>Frequency-modulated Wave</item>
     </array>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -55,10 +55,10 @@ public class DisplayActivity extends AppCompatActivity {
         mInterstitialAd.setAdUnitId("ca-app-pub-2926708254200421/3987453628");
 
         final TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("DATA"));
-        tabLayout.addTab(tabLayout.newTab().setText("CARR"));
-        tabLayout.addTab(tabLayout.newTab().setText("MOD"));
-        tabLayout.addTab(tabLayout.newTab().setText("MUL"));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.dataTabTextAbb));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.carrTabTextAbb));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.modTabTextAbb));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.mulTabTextAbb));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         viewPager = (ViewPager) findViewById(R.id.pager);
@@ -104,7 +104,7 @@ public class DisplayActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 final Snackbar snackbar = Snackbar.make(view, getSignalData(viewPager.getCurrentItem()), Snackbar.LENGTH_INDEFINITE);
-                snackbar.setAction("GOT IT", new View.OnClickListener() {
+                snackbar.setAction(R.string.gotItText, new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
                                 snackbar.dismiss();
@@ -203,10 +203,10 @@ public class DisplayActivity extends AppCompatActivity {
 
     private String getSignalData(int page) {
         String signaldata[] = {
-                "The signal that based on the first formula. This signal transmits information and should be almost same form after transmission complated.",
-                "The signal that based on the second formula. This signal carries the actual signal.",
-                "This signal is an addition of data signal and carrier signal. This signal will transmit.",
-                "This graph shows us two signals to see the differences."
+                getString(R.string.dataInfoText),
+                getString(R.string.dataCarrText),
+                getString(R.string.dataModText),
+                getString(R.string.dataMulText)
         };
 
         return signaldata[page];

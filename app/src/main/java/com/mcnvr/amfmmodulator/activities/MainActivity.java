@@ -132,20 +132,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String data = "Amplitude modulation (AM) is a modulation technique used in electronic communication, most commonly for transmitting information via a radio carrier wave. In amplitude modulation, the amplitude (signal strength) of the carrier wave is varied in proportion to the waveform being transmitted.\n" +
-                        "\n" +
-                        "c(t) = A . sin( 2.π.fc.t)\n" +
-                        "m(t) = M . cos( 2.π.fm.t + φ)\n" +
-                        "y(t) = [1 + m(t)] . c(t)\n" +
-                        "\n" +
-                        "Angle modulation is a class of analog modulation. These techniques are based on altering the angle (or phase) of a carrier signal to transmit data. This as opposed to varying the amplitude of the carrier, such as in amplitude modulation transmission.\n" +
-                        "\n" +
-                        "s(t) = A . cos( 2.π.fc.t + φ(t) )\n" +
-                        "PM: φ(t) = np . m(t), where np is parameter called phase modulation index.\n" +
-                        "FM: φ'(t) = nf . m(t), where nf is the frequency modulation index and φ’(t).";
+                String data = getString(R.string.mainInfoText);
 
                 final Snackbar snackbar = Snackbar.make(view, data, Snackbar.LENGTH_INDEFINITE);
-                snackbar.setAction("GOT IT", new View.OnClickListener() {
+                snackbar.setAction(R.string.gotItText, new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         snackbar.dismiss();

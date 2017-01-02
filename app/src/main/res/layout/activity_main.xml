@@ -314,7 +314,7 @@
                 style="@android:style/Widget.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="GENERAL INFO"
+                android:text="@string/infoButton"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="30sp" />
         </LinearLayout>
