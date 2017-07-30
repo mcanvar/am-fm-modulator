@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AM-FM Modulator</string>
+    <string name="app_name">AM-FM Modülasyonu</string>
     <string name="dataSignalText">VERİ SİNYALİ</string>
     <string name="carrierSignalText">TAŞIYICI SİNYAL</string>
     <string name="modulatedSignalText">MODÜLER SİNYAL</string>
