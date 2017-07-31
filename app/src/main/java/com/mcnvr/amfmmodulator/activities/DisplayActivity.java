@@ -69,7 +69,7 @@ public class DisplayActivity extends AppCompatActivity {
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                if (mInterstitialAd.isLoaded()) {
+                if (mInterstitialAd.isLoaded() && tab.getPosition() == 3) {
                     mInterstitialAd.show();
                 } else {
                     if (shouldShowAd)

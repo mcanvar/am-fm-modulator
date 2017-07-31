@@ -57,19 +57,6 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         mAdView.loadAd(adRequest);
 
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-2926708254200421/6999795622");
-
-        mInterstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdClosed() {
-                requestNewInterstitial();
-                startPlotting();
-            }
-        });
-
-        requestNewInterstitial();
-
         //Hide keyboard at the beginning
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
@@ -121,11 +108,7 @@ public class MainActivity extends AppCompatActivity {
         buttonPlot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mInterstitialAd.isLoaded()) {
-                    mInterstitialAd.show();
-                } else {
-                    startPlotting();
-                }
+                startPlotting();
             }
         });
         buttonInfo.setOnClickListener(new View.OnClickListener() {
@@ -206,14 +189,6 @@ public class MainActivity extends AppCompatActivity {
         outState.putString("textViewCTime", textViewCTime.getText().toString());
         outState.putString("editTextCPhase", editTextCPhase.getText().toString());
         outState.commit();
-    }
-
-    private void requestNewInterstitial() {
-        AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .build();
-
-        mInterstitialAd.loadAd(adRequest);
     }
 
     /** Called when leaving the activity */
