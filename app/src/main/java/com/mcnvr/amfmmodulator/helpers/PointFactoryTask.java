@@ -30,7 +30,7 @@ public class PointFactoryTask extends AsyncTask<String, Integer, String> {
 
     ProgressDialog progressDialog;
 
-    public PointFactoryTask(Context context, Button buttonPlot){
+    public PointFactoryTask(Context context, Button buttonPlot) {
         this.context = context;
         this.buttonPlot = buttonPlot;
     }
@@ -51,7 +51,23 @@ public class PointFactoryTask extends AsyncTask<String, Integer, String> {
             doubleParC = new DoubleParcelable();
             doubleParM = new DoubleParcelable();
 
-            if(selection == 0) {
+            if (selection == 0) {
+                DataPoint[] dataPoint = wavePointFactory(time, amplitude, frequency, phase);
+                DataPoint[] dataPointC = wavePointFactory(timeC, amplitudeC, frequencyC, phaseC);
+                DataPoint[] dataPointM = wavePointFactory(timeC, amplitudeC, frequencyC, phaseC, dataPoint, selection);
+
+                doublePar.setDataPoint(dataPoint);
+                doubleParC.setDataPoint(dataPointC);
+                doubleParM.setDataPoint(dataPointM);
+            } else if (selection == 1) {
+                DataPoint[] dataPoint = wavePointFactory(time, amplitude, frequency, phase);
+                DataPoint[] dataPointC = wavePointFactory(timeC, amplitudeC, frequencyC, phaseC);
+                DataPoint[] dataPointM = wavePointFactory(timeC, amplitudeC, frequencyC, phaseC, dataPoint, selection);
+
+                doublePar.setDataPoint(dataPoint);
+                doubleParC.setDataPoint(dataPointC);
+                doubleParM.setDataPoint(dataPointM);
+            } else {
                 DataPoint[] dataPoint = wavePointFactory(time, amplitude, frequency, phase);
                 DataPoint[] dataPointC = wavePointFactory(timeC, amplitudeC, frequencyC, phaseC);
                 DataPoint[] dataPointM = wavePointFactory(timeC, amplitudeC, frequencyC, phaseC, dataPoint, selection);
@@ -60,33 +76,17 @@ public class PointFactoryTask extends AsyncTask<String, Integer, String> {
                 doubleParC.setDataPoint(dataPointC);
                 doubleParM.setDataPoint(dataPointM);
             }
-            else if(selection == 1) {
-                DataPoint[] dataPoint = wavePointFactory(time, amplitude, frequency, phase);
-                DataPoint[] dataPointC = wavePointFactory(timeC, amplitudeC, frequencyC, phaseC);
-                DataPoint[] dataPointM = wavePointFactory(timeC, amplitudeC, frequencyC, phaseC, dataPoint, selection);
-
-                doublePar.setDataPoint(dataPoint);
-                doubleParC.setDataPoint(dataPointC);
-                doubleParM.setDataPoint(dataPointM);
-            }else {
-                DataPoint[] dataPoint = wavePointFactory(time, amplitude, frequency, phase);
-                DataPoint[] dataPointC = wavePointFactory(timeC, amplitudeC, frequencyC, phaseC);
-                DataPoint[] dataPointM = wavePointFactory(timeC, amplitudeC, frequencyC, phaseC, dataPoint, selection);
-
-                doublePar.setDataPoint(dataPoint);
-                doubleParC.setDataPoint(dataPointC);
-                doubleParM.setDataPoint(dataPointM);
-            }
-        } catch (Exception e){}
+        } catch (Exception e) {
+        }
 
         return "Download complete!";
     }
 
     @Override
     protected void onPreExecute() {
-        if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB){
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
             progressDialog = new ProgressDialog(context, R.style.CUSTOM_PROGRESS_DIALOG);
-        }else{
+        } else {
             progressDialog = new ProgressDialog(context);
         }
         progressDialog.setTitle("Creating...");
@@ -133,13 +133,13 @@ public class PointFactoryTask extends AsyncTask<String, Integer, String> {
         Integer arraySize = time * 125;
         DataPoint[] dataPointTemp = new DataPoint[arraySize];
 
-        for (int i=0; i<arraySize; i++) {
-            dataPointTemp[i] = new DataPoint(startPoint, (amp * (Math.sin(2 * Math.PI * freq * startPoint + pha ))));
+        for (int i = 0; i < arraySize; i++) {
+            dataPointTemp[i] = new DataPoint(startPoint, (amp * (Math.sin(2 * Math.PI * freq * startPoint + pha))));
             startPoint = startPoint + 0.008;
 
-            if(isCancelled()) break;
+            if (isCancelled()) break;
         }
-        dataPointTemp[arraySize-1] = new DataPoint(startPoint, (amp * (Math.sin(2 * Math.PI * freq * startPoint + pha ))));
+        dataPointTemp[arraySize - 1] = new DataPoint(startPoint, (amp * (Math.sin(2 * Math.PI * freq * startPoint + pha))));
 
         return dataPointTemp;
     }
@@ -150,12 +150,12 @@ public class PointFactoryTask extends AsyncTask<String, Integer, String> {
         Integer arraySize = time * 125;
         DataPoint[] dataPointTemp = new DataPoint[arraySize];
 
-        if(selection == 0) {
+        if (selection == 0) {
             for (int i = 0; i < arraySize; i++) {
                 dataPointTemp[i] = new DataPoint(startPoint, ((amp + carrier[i].getY()) * (Math.sin(2 * Math.PI * freq * startPoint + pha))));
                 startPoint = startPoint + 0.008;
 
-                if(isCancelled()) break;
+                if (isCancelled()) break;
 
                 int progress = i * 100 / arraySize;
 
@@ -163,30 +163,30 @@ public class PointFactoryTask extends AsyncTask<String, Integer, String> {
             }
             dataPointTemp[arraySize - 1] = new DataPoint(startPoint, ((amp + carrier[arraySize - 1].getY()) * (Math.sin(2 * Math.PI * freq * startPoint + pha))));
         }
-        if(selection == 1) {
+        if (selection == 1) {
             for (int i = 0; i < arraySize; i++) {
-                dataPointTemp[i] = new DataPoint(startPoint, (amp * (Math.sin(2 * Math.PI * freq * startPoint + 3 * carrier[i].getY() ))));
+                dataPointTemp[i] = new DataPoint(startPoint, (amp * (Math.sin(2 * Math.PI * freq * startPoint + 3 * carrier[i].getY()))));
                 startPoint = startPoint + 0.008;
 
-                if(isCancelled()) break;
+                if (isCancelled()) break;
 
                 int progress = i * 100 / arraySize;
                 publishProgress(progress);
             }
-            dataPointTemp[arraySize - 1] = new DataPoint(startPoint, (amp * (Math.sin(2 * Math.PI * freq * startPoint + 3 * carrier[arraySize - 1].getY() ))));
+            dataPointTemp[arraySize - 1] = new DataPoint(startPoint, (amp * (Math.sin(2 * Math.PI * freq * startPoint + 3 * carrier[arraySize - 1].getY()))));
         }
-        if(selection == 2) {
-            for (int i = 0; i < arraySize-1; i++) {
+        if (selection == 2) {
+            for (int i = 0; i < arraySize - 1; i++) {
                 dataPointTemp[i] = new DataPoint(startPoint, (amp * (Math.sin(2 * Math.PI * freq * startPoint + 2 * Math.PI * 3 +
-                        (carrier[i].getY() - carrier[i+1].getY())/(-0.005) ))));
+                        (carrier[i].getY() - carrier[i + 1].getY()) / (-0.005)))));
                 startPoint = startPoint + 0.008;
 
-                if(isCancelled()) break;
+                if (isCancelled()) break;
 
                 int progress = i * 100 / arraySize;
                 publishProgress(progress);
             }
-            dataPointTemp[arraySize - 1] = new DataPoint(startPoint, (amp * (Math.sin(2 * Math.PI * freq * startPoint +  3 *
+            dataPointTemp[arraySize - 1] = new DataPoint(startPoint, (amp * (Math.sin(2 * Math.PI * freq * startPoint + 3 *
                     Math.tan(carrier[arraySize - 1].getY())))));
         }
 

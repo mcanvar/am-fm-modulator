@@ -9,6 +9,7 @@
     <string name="drawButton">GRAFİĞİ ÇİZ</string>
     <string name="infoButton">GENEL BİLGİLER</string>
     <string name="resetButton">TEMİZLE</string>
+    <string name="finalButton">SONUCU GÖSTER</string>
     <string name="gotItText">ANLADIM</string>
     <string name="mainInfoText">
         Genlik modülasyonu (AM), elektronik iletişimde kullanılan bir modülasyon tekniğidir ve çoğunlukla bir radyo taşıyıcı dalga yoluyla bilgi iletmek için kullanılır. Genlik modülasyonunda, taşıyıcı dalganın genlik (sinyal gücü) iletilen dalga biçimi ile orantılı olarak değişir.\n
@@ -30,7 +31,7 @@
     <string name="dataTabTextAbb">VERİ</string>
     <string name="carrTabTextAbb">TAŞIYICI</string>
     <string name="modTabTextAbb">MODÜLE</string>
-    <string name="mulTabTextAbb">İKİLİ</string>
+    <string name="mulTabTextAbb">SONUÇ</string>
 
     <array name="drawingMode">
         <item>Genlik Modülasyonu</item>

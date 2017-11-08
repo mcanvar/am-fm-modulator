@@ -8,6 +8,7 @@
     <string name="carrierSignalFText">Am и FM модулятор</string>
     <string name="drawButton">ГРАФИК</string>
     <string name="infoButton">ОБЩАЯ ИНФОРМАЦИЯ</string>
+    <string name="finalButton">показать результат</string>
     <string name="resetButton">очистить форму</string>
     <string name="gotItText">ПОЛУЧИЛ ЕГО</string>
     <string name="mainInfoText">
@@ -30,7 +31,7 @@
     <string name="dataTabTextAbb">Данные</string>
     <string name="carrTabTextAbb">Перевозчик</string>
     <string name="modTabTextAbb">МОД</string>
-    <string name="mulTabTextAbb">Несколько</string>
+    <string name="mulTabTextAbb">Pезультат</string>
     <array name="drawingMode">
         <item>Амплитудно-модулированная волна</item>
         <item>Фазово-модулированные волны</item>

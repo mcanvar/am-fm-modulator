@@ -7,5 +7,6 @@
     <color name="colorSecondaryLightT">#553E828F</color>
     <color name="colorSecondaryLightTT">#113E828F</color>
     <color name="colorBackground">#F5EED2</color>
+    <color name="colorFinalButton">#e90722</color>
     <color name="colorWhite">#FFFFFF</color>
 </resources>

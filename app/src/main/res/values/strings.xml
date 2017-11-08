@@ -7,6 +7,7 @@
     <string name="dataSignalFText">AM FM Modulator</string>
     <string name="carrierSignalFText">AM FM Modulator</string>
     <string name="drawButton">PLOT GRAPH</string>
+    <string name="finalButton">FINAL RESULT</string>
     <string name="infoButton">GENERAL INFO</string>
     <string name="resetButton">CLEAR</string>
     <string name="gotItText">GOT IT</string>
@@ -30,7 +31,7 @@
     <string name="dataTabTextAbb">DATA</string>
     <string name="carrTabTextAbb">CARR</string>
     <string name="modTabTextAbb">MOD</string>
-    <string name="mulTabTextAbb">MUL</string>
+    <string name="mulTabTextAbb">RESULT</string>
     <array name="drawingMode">
         <item>Amplitude-modulated Wave</item>
         <item>Phase-modulated Wave</item>

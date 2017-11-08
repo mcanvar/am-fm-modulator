@@ -28,7 +28,7 @@ public class MixGraphFragment extends Fragment {
         DisplayActivity displayActivity = (DisplayActivity) getActivity();
         parcelable = displayActivity.getParcelable();
         parcelableMix = displayActivity.getParcelableModulated();
-        displayActivity.initializeGraph( graphView, parcelableMix, parcelable );
+        displayActivity.initializeGraph( graphView, parcelableMix );
 
         return view;
     }

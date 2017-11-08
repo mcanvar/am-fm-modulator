@@ -49,10 +49,10 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentTop="true"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:layout_marginTop="65dp"
                     android:layout_marginRight="20dp"
+                    android:layout_marginTop="65dp"
                     android:src="@android:drawable/ic_menu_help"
+                    android:textColor="@color/colorPrimaryDark"
                     ads:backgroundTint="@color/colorPrimaryDark" />
 
                 <android.support.v4.view.ViewPager
@@ -63,12 +63,17 @@
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/ad_view"
+
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        style="@android:style/Widget.Button"
         android:layout_alignParentBottom="true"
-        ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-2926708254200421/4766182823" />
+        android:layout_centerHorizontal="true"
+        android:text="@string/finalButton"
+        android:padding="10dp"
+        android:layout_weight="1"
+        android:textSize="30sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:id="@+id/buttonFinal" />
 </RelativeLayout>
