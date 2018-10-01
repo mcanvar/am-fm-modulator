@@ -23,6 +23,5 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.DisplayActivity" />
-        <activity android:name=".activities.PrivacyActivity" />
     </application>
 </manifest>

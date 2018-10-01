@@ -3,6 +3,7 @@ package com.mcnvr.amfmmodulator.activities;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -159,8 +160,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void openPrivacy(View view)
     {
-        Intent intent = new Intent(MainActivity.this, PrivacyActivity.class);
-        startActivity(intent);
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://crx4.github.io/AM-FM-Modulator/#privacy-policy"));
+        startActivity(browserIntent);
     }
 
     //clear form
