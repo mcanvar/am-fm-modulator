@@ -36,3 +36,7 @@ function toggleTab(selectedNav, targetId) {
     }
   });
 }
+
+if(window.location.hash == '#privacy-policy') {
+    toggleTab(3,'pane-3');
+}
