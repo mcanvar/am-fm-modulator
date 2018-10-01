@@ -8,7 +8,7 @@ import com.jjoe64.graphview.series.DataPoint;
 /**
  * Created by mevlut on 9.12.2015.
  */
-public class DoubleParcelable implements Parcelable{
+public class DoubleParcelable implements Parcelable {
 
     public DataPoint[] datapoints;
 

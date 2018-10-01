@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion '25.0.0'
+    compileSdkVersion 26
     defaultConfig {
         applicationId "com.mcnvr.amfmmodulator"
-        minSdkVersion 14
-        targetSdkVersion 23
-        versionCode 10
-        versionName '1.4'
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 12
+        versionName '1.4.2'
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -21,14 +21,13 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.jjoe64:graphview:4.2.1'
-    compile 'com.android.support:support-v4:23.1.1'
-    compile 'com.android.support:design:23.1.1'
-    compile 'com.github.rampo.updatechecker:library:2.1.8'
-    compile 'com.google.firebase:firebase-ads:10.0.1'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.google.android.gms:play-services-ads:15.0.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.android.support:design:26.1.0'
+    api 'com.github.rampo.updatechecker:library:2.1.8'
+    api 'com.jjoe64:graphview:4.2.1'
 }
-
-apply plugin: 'com.google.gms.google-services'

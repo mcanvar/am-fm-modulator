@@ -317,17 +317,35 @@
                 android:text="@string/infoButton"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/privacyLinkText"
+                android:id="@+id/textView11"
+                android:onClick="openPrivacy"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                android:textAlignment="center" />
+
         </LinearLayout>
     </ScrollView>
 
+
     <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/ad_view"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-2926708254200421/4766182823" />
+        ads:adUnitId="ca-app-pub-2926708254200421/4766182823">
+    </com.google.android.gms.ads.AdView>
+
     <!--<RelativeLayout-->
         <!--android:id="@+id/footer"-->
         <!--android:layout_width="match_parent"-->

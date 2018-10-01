@@ -1,10 +1,11 @@
 package com.mcnvr.amfmmodulator.activities;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -15,7 +16,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
@@ -34,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
     EditText editTextCAmplitude;
     EditText editTextCFrequency;
     TextView textViewCTime;
+    TextView textPrivacy;
     EditText editTextCPhase;
     Spinner spinnerWaveType;
     Button buttonPlot;
     Button buttonInfo;
-    InterstitialAd mInterstitialAd;
     private AdView mAdView;
 
     @Override
@@ -46,12 +46,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        UpdateChecker checker = new UpdateChecker(this); // If you are in a Activity or a FragmentActivity
+        UpdateChecker checker = new UpdateChecker(this);
         checker.start();
 
 
         MobileAds.initialize(this, "ca-app-pub-2926708254200421~2569596021");
-        mAdView = (AdView) findViewById(R.id.ad_view);
+
+        mAdView = findViewById(R.id.ad_view);
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
@@ -61,17 +62,18 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
         //Components
-        buttonPlot = (Button) findViewById(R.id.buttonPlot);
-        buttonInfo = (Button) findViewById(R.id.buttonInfo);
-        editTextAmplitude = (EditText)findViewById(R.id.editTextAmplitude);
-        editTextFrequency = (EditText)findViewById(R.id.editTextFrequency);
-        editTextTime = (EditText)findViewById(R.id.editTextTime);
-        editTextPhase = (EditText)findViewById(R.id.editTextPhase);
-        editTextCAmplitude = (EditText)findViewById(R.id.editTextCAmplitude);
-        editTextCFrequency = (EditText)findViewById(R.id.editTextCFrequency);
-        textViewCTime = (TextView)findViewById(R.id.editTextCTime);
-        editTextCPhase = (EditText)findViewById(R.id.editTextCPhase);
-        spinnerWaveType = (Spinner) findViewById(R.id.spinnerWaveType);
+        buttonPlot = findViewById(R.id.buttonPlot);
+        buttonInfo = findViewById(R.id.buttonInfo);
+        textPrivacy = findViewById(R.id.textView11);
+        editTextAmplitude = findViewById(R.id.editTextAmplitude);
+        editTextFrequency = findViewById(R.id.editTextFrequency);
+        editTextTime = findViewById(R.id.editTextTime);
+        editTextPhase = findViewById(R.id.editTextPhase);
+        editTextCAmplitude = findViewById(R.id.editTextCAmplitude);
+        editTextCFrequency = findViewById(R.id.editTextCFrequency);
+        textViewCTime = findViewById(R.id.editTextCTime);
+        editTextCPhase = findViewById(R.id.editTextCPhase);
+        spinnerWaveType = findViewById(R.id.spinnerWaveType);
 
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
         Boolean isUsed = sharedPreferences.contains("is_saved");
@@ -125,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 View snackbarView = snackbar.getView();
-                TextView textView = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
+                TextView textView = snackbarView.findViewById(android.support.design.R.id.snackbar_text);
                 textView.setMaxLines(50);
                 snackbar.setActionTextColor(Color.YELLOW).show();
             }
@@ -142,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
                 editTextCAmplitude.getText().toString().matches("") ||
                 editTextCFrequency.getText().toString().matches("") ||
                 editTextCPhase.getText().toString().matches(""))
-            Toast.makeText(getApplicationContext(),"Empty Value(s)!",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Empty Value(s)!", Toast.LENGTH_LONG).show();
         else {
             Integer selection = spinnerWaveType.getSelectedItemPosition();
             PointFactoryTask pointFactoryTask = new PointFactoryTask(MainActivity.this, buttonPlot);
@@ -153,6 +155,12 @@ public class MainActivity extends AppCompatActivity {
                     editTextCFrequency.getText().toString(), editTextCPhase.getText().toString(),
                     selection.toString());
         }
+    }
+
+    public void openPrivacy(View view)
+    {
+        Intent intent = new Intent(MainActivity.this, PrivacyActivity.class);
+        startActivity(intent);
     }
 
     //clear form
@@ -188,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putString("editTextCFrequency", editTextCFrequency.getText().toString());
         outState.putString("textViewCTime", textViewCTime.getText().toString());
         outState.putString("editTextCPhase", editTextCPhase.getText().toString());
-        outState.commit();
+        outState.apply();
     }
 
     /** Called when leaving the activity */

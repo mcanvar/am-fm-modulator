@@ -32,6 +32,8 @@
     <string name="carrTabTextAbb">TAŞIYICI</string>
     <string name="modTabTextAbb">MODÜLE</string>
     <string name="mulTabTextAbb">SONUÇ</string>
+    <string name="privacyLinkText">Privacy Policy</string>
+    <string name="goBackButton">I UNDERSTAND</string>
 
     <array name="drawingMode">
         <item>Genlik Modülasyonu</item>

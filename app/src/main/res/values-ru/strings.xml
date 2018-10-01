@@ -32,6 +32,8 @@
     <string name="carrTabTextAbb">Перевозчик</string>
     <string name="modTabTextAbb">МОД</string>
     <string name="mulTabTextAbb">Pезультат</string>
+    <string name="privacyLinkText">Privacy Policy</string>
+    <string name="goBackButton">I UNDERSTAND</string>
     <array name="drawingMode">
         <item>Амплитудно-модулированная волна</item>
         <item>Фазово-модулированные волны</item>
